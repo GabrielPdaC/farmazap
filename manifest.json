@@ -1,0 +1,55 @@
+{
+  "manifest_version": 3,
+  "name": "FarmaZap",
+  "version": "0.1.0",
+  "description": "Ao finalizar a baixa/saída no G-MUS, avisa o paciente pelo WhatsApp Web a data de término dos medicamentos.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://saoleopoldo.g-mus.com.br/*",
+    "https://web.whatsapp.com/*"
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "action": {
+    "default_title": "FarmaZap",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png"
+    },
+    "default_popup": "src/popup/popup.html"
+  },
+  "options_page": "src/options/options.html",
+  "content_scripts": [
+    {
+      "matches": ["https://saoleopoldo.g-mus.com.br/*"],
+      "js": ["src/gmus/hook-main.js"],
+      "world": "MAIN",
+      "run_at": "document_start",
+      "all_frames": true
+    },
+    {
+      "matches": ["https://saoleopoldo.g-mus.com.br/*"],
+      "js": [
+        "src/shared/util.js",
+        "src/gmus/gmus-api.js",
+        "src/gmus/modal.js",
+        "src/gmus/content.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    },
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["src/whatsapp/content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

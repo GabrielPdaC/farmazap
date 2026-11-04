@@ -1,0 +1,13 @@
+# Pacote gerado (python scripts/empacotar.py)
+dist/
+
+# Prints originais: contêm telefone e número de saída reais.
+# Use as versões mascaradas em store/.
+/configs-*.png
+/popup-status.png
+
+# Sistema / editores
+Thumbs.db
+.DS_Store
+.vscode/
+__pycache__/

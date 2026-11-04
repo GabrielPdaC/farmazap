@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FarmaZap — Política de Privacidade</title>
+  <style>
+    :root { --bg: #f8fafc; --card: #ffffff; --text: #0f172a; --muted: #475569; --accent: #075e54; --border: #e2e8f0; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #0b1220; --card: #111a2b; --text: #e2e8f0; --muted: #94a3b8; --accent: #34d399; --border: #1e293b; }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+    main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+    article { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 28px 24px; }
+    h1 { margin: 0 0 4px; font-size: 1.7rem; color: var(--accent); }
+    h2 { margin: 28px 0 8px; font-size: 1.15rem; }
+    p, li { color: var(--text); }
+    .meta { color: var(--muted); margin: 0 0 20px; font-size: .95rem; }
+    ul { padding-left: 1.2rem; }
+    table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+    th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { color: var(--muted); font-weight: 600; }
+    a { color: var(--accent); }
+  </style>
+</head>
+<body>
+<main>
+<article>
+  <h1>Política de Privacidade — FarmaZap</h1>
+  <p class="meta">Extensão para o navegador Google Chrome · Última atualização: 3 de novembro de 2026</p>
+
+  <h2>1. O que é o FarmaZap</h2>
+  <p>O FarmaZap é uma extensão para farmácias municipais que usam o sistema G-MUS. Ao finalizar uma
+  baixa/saída de medicamentos, ela mostra ao atendente os medicamentos entregues com suas datas de término e,
+  se o atendente quiser, envia essas datas ao paciente pelo WhatsApp Web.</p>
+
+  <h2>2. Quais dados a extensão acessa</h2>
+  <p>Somente no momento em que o atendente finaliza uma baixa/saída, a extensão lê no G-MUS:</p>
+  <ul>
+    <li>nome e código do paciente;</li>
+    <li>telefone do cadastro do paciente;</li>
+    <li>medicamentos entregues, duração e data de término de cada um.</li>
+  </ul>
+  <p>A leitura usa a sessão do G-MUS já aberta pelo atendente. A extensão não pede, não lê e não armazena senhas,
+  e não altera, cria nem exclui nenhum registro no G-MUS.</p>
+
+  <h2>3. Como os dados são usados</h2>
+  <ul>
+    <li>Para exibir ao atendente uma janela com o paciente, o telefone e os medicamentos.</li>
+    <li>Para montar a mensagem com os medicamentos que o atendente escolher.</li>
+    <li>Para enviar essa mensagem pelo WhatsApp Web, <strong>somente quando o atendente confirma o envio</strong>.</li>
+  </ul>
+  <p>Os dados não são usados para nenhuma outra finalidade, como publicidade, perfis ou análise de crédito.</p>
+
+  <h2>4. Onde os dados ficam</h2>
+  <p>Tudo acontece no navegador do computador da farmácia. <strong>O FarmaZap não tem servidor</strong>, e nenhum dado
+  é enviado ao desenvolvedor ou a terceiros, com uma exceção: a mensagem que o atendente decide enviar ao paciente
+  pelo WhatsApp (item 5).</p>
+  <table>
+    <thead><tr><th>O que é guardado</th><th>Onde</th><th>Por quanto tempo</th></tr></thead>
+    <tbody>
+      <tr><td>Configurações (nome da farmácia, modelo da mensagem)</td><td>Armazenamento local da extensão</td><td>Até a extensão ser removida</td></tr>
+      <tr><td>Saída finalizada aguardando decisão (número da saída, código e nome do paciente)</td><td>Armazenamento temporário da sessão do navegador</td><td>Até o atendente enviar ou descartar o aviso, no máximo 30 minutos; é apagado ao fechar o navegador</td></tr>
+      <tr><td>Histórico de avisos (número da saída, situação do envio, data, quantidade de medicamentos)</td><td>Armazenamento local da extensão</td><td>Últimos 100 registros; apagado ao remover a extensão</td></tr>
+    </tbody>
+  </table>
+  <p>Telefone do paciente, lista de medicamentos e texto das mensagens <strong>não são armazenados</strong>.</p>
+
+  <h2>5. Compartilhamento</h2>
+  <p>A mensagem confirmada pelo atendente é enviada ao paciente pelo WhatsApp, operado pela Meta, como qualquer
+  mensagem enviada manualmente pelo WhatsApp Web. Esse envio segue a
+  <a href="https://www.whatsapp.com/legal/privacy-policy" rel="noopener">política de privacidade do WhatsApp</a>.
+  Nenhum outro compartilhamento é feito, e os dados não são vendidos.</p>
+
+  <h2>6. Permissões da extensão</h2>
+  <ul>
+    <li><strong>storage</strong>: guardar as configurações e o histórico descritos no item 4.</li>
+    <li><strong>Acesso a saoleopoldo.g-mus.com.br</strong>: detectar a finalização da baixa/saída e ler os dados do item 2.</li>
+    <li><strong>Acesso a web.whatsapp.com</strong>: abrir a conversa e enviar a mensagem confirmada pelo atendente.</li>
+  </ul>
+
+  <h2>7. Responsabilidade e direitos do titular (LGPD)</h2>
+  <p>Os dados dos pacientes pertencem ao cadastro da farmácia no G-MUS. O FarmaZap é apenas uma ferramenta usada
+  pela farmácia no atendimento. Pedidos de acesso, correção ou exclusão de dados, conforme a Lei Geral de Proteção
+  de Dados (Lei nº 13.709/2018), devem ser feitos à farmácia ou à Secretaria Municipal de Saúde responsável pelo cadastro.</p>
+  <p>Para apagar todos os dados guardados pela extensão, basta removê-la do navegador.</p>
+
+  <h2>8. Contato</h2>
+  <p>Dúvidas sobre esta política: abra uma solicitação em
+  <a href="https://github.com/GabrielPdaC/farmazap/issues" rel="noopener">github.com/GabrielPdaC/farmazap/issues</a>.</p>
+
+  <h2>9. Alterações</h2>
+  <p>Esta política pode ser atualizada quando a extensão mudar. A data da última atualização fica no topo da página.</p>
+
+  <p class="meta">O FarmaZap é uma ferramenta independente, sem vínculo com o WhatsApp/Meta nem com a Inovadora (G-MUS).</p>
+</article>
+</main>
+</body>
+</html>
